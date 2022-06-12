@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import { store, key } from './store'
 
+import './styles/index.pcss'
+
 const app = createApp(App)
 
 app.use(router).use(store, key)

@@ -9,24 +9,33 @@ const store = useStore(key)
 <template>
   <img
     alt="Vue logo  "
-    src="@/assets/"
+    src="@/assets/logo.png"
   >
 
-  {{ $store.state.count }}
+  <span class="title">
+    测试样式
+    {{ store.state.count }}
+  </span>
 
-  {{ store.state.count }}
+  <span class="theme">
+    测试主题
+  </span>
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
-<style>
+<style lang="postcss">
+@import "@/styles/variables.pcss";
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
   background-image: url(@/assets/logo.png);
+}
+
+.theme {
+  color: $fontColor;
 }
 </style>
