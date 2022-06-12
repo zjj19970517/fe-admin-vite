@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+defineProps({
+  name: {
+    type: String,
+    required: true
+  }
+})
 </script>
 
 <template>
@@ -7,7 +14,6 @@ import HelloWorld from './components/HelloWorld.vue'
     alt="Vue logo  "
     src="./assets/logo.png"
   >
-
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
