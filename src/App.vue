@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from 'vuex'
 import { key } from './store'
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 
 const store = useStore(key)
 </script>
@@ -9,7 +9,7 @@ const store = useStore(key)
 <template>
   <img
     alt="Vue logo  "
-    src="./assets/logo.png"
+    src="@/assets/"
   >
 
   {{ $store.state.count }}
@@ -27,5 +27,6 @@ const store = useStore(key)
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-image: url(@/assets/logo.png);
 }
 </style>
