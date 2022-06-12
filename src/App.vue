@@ -1,12 +1,9 @@
 <script setup lang="ts">
+import { useStore } from 'vuex'
+import { key } from './store'
 import HelloWorld from './components/HelloWorld.vue'
 
-defineProps({
-  name: {
-    type: String,
-    required: true
-  }
-})
+const store = useStore(key)
 </script>
 
 <template>
@@ -14,6 +11,10 @@ defineProps({
     alt="Vue logo  "
     src="./assets/logo.png"
   >
+
+  {{ $store.state.count }}
+
+  {{ store.state.count }}
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
