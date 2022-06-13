@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslint from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import autoImport from 'unplugin-auto-import/vite'
+// import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -15,15 +15,12 @@ export default defineConfig({
       cache: false
     }),
     vueJsx(),
-    autoImport({
-      resolvers: [
-        ElementPlusResolver()
-      ]
-    }),
     components({
+      dirs: ['src/components'],
       resolvers: [
         ElementPlusResolver()
-      ]
+      ],
+      dts: 'typings/components.d.ts'
     })
   ],
   resolve: {
